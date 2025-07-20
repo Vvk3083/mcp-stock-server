@@ -1,0 +1,90 @@
+{
+  "mcpServers": {
+    "stock-analysis": {
+      "type": "rest",
+      "url": "http://localhost:8765",
+      "tools": {
+        "get_current_price": {
+          "path": "/current_price",
+          "method": "GET",
+          "description": "Get current stock price using Yahoo Finance",
+          "parameters": {
+            "symbol": {
+              "type": "string",
+              "description": "Stock symbol (e.g. AAPL)"
+            }
+          }
+        },
+        "get_stock_data": {
+          "path": "/stock_data",
+          "method": "GET",
+          "description": "Get comprehensive stock data including price, volume, and daily stats",
+          "parameters": {
+            "symbol": {
+              "type": "string",
+              "description": "Stock symbol (e.g. TSLA)"
+            }
+          }
+        },
+        "get_moving_average": {
+          "path": "/moving_average",
+          "method": "GET",
+          "description": "Get moving average for a stock",
+          "parameters": {
+            "symbol": {
+              "type": "string",
+              "description": "Stock symbol (e.g. TSLA)"
+            },
+            "window": {
+              "type": "integer",
+              "description": "Window size for moving average (default: 20)"
+            }
+          }
+        },
+        "get_technical_indicators": {
+          "path": "/technical_indicators",
+          "method": "GET",
+          "description": "Get comprehensive technical indicators including RSI, MACD, Bollinger Bands, and SMAs",
+          "parameters": {
+            "symbol": {
+              "type": "string",
+              "description": "Stock symbol (e.g. AAPL)"
+            }
+          }
+        },
+        "get_historical_data": {
+          "path": "/historical_data",
+          "method": "GET",
+          "description": "Get historical stock data for analysis",
+          "parameters": {
+            "symbol": {
+              "type": "string",
+              "description": "Stock symbol (e.g. MSFT)"
+            },
+            "period": {
+              "type": "string",
+              "description": "Time period (e.g. 1d, 5d, 1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max)"
+            }
+          }
+        },
+        "get_stock_info": {
+          "path": "/stock_info",
+          "method": "GET",
+          "description": "Get basic stock information including company details and financial metrics",
+          "parameters": {
+            "symbol": {
+              "type": "string",
+              "description": "Stock symbol (e.g. GOOGL)"
+            }
+          }
+        },
+        "health_check": {
+          "path": "/health",
+          "method": "GET",
+          "description": "Check if the stock analysis server is running",
+          "parameters": {}
+        }
+      }
+    }
+  }
+}
